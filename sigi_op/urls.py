@@ -24,6 +24,7 @@ from ipa.views import NoBreakViewSet
 from ipa.views import SwitchViewSet
 from dgo.views import GODListViewSet
 from dgo.views import GODPortListViewSet, GODPortConnectionTypeListViewSet
+from segments.views import SegmentViewSet
 from gbic.views import GBICListViewSet, GBIC_TypeListViewSet
 from emendation_box.views import EmendationBoxListViewSet
 from emendation_box.views import EmendationBoxTypeListViewSet
@@ -53,13 +54,14 @@ router.register(r'emendation_box_structures',
                 EmendationBoxStructureListViewSet, base_name='structure')
 router.register(r'technicalreserves', TechnicalReserveListViewSet,
                 base_name='technical_reserve')
-router.register(r'sites', SiteListViewSet, base_name="site")
-router.register(r'sitetypes', SiteTypeListViewSet, base_name="sitetype")
-router.register(r'nobreaks', NoBreakViewSet, base_name='nobreak')
-router.register(r'switches', SwitchViewSet, base_name='switch')
-router.register(r'uplinks', UplinkViewSet, base_name='uplink')
-router.register(r'contacts', ContactViewSet, base_name="contact")
-router.register(r'contacttypes', ContactTypeViewSet, base_name="contacttype")
+router.register(r'site', SiteListViewSet, base_name="site")
+router.register(r'sitetype', SiteTypeListViewSet, base_name="sitetype")
+router.register(r'nobreak', NoBreakViewSet, base_name='nobreak')
+router.register(r'switch', SwitchViewSet, base_name='switch')
+router.register(r'uplink', UplinkViewSet, base_name='uplink')
+router.register(r'contact', ContactViewSet, base_name="contact")
+router.register(r'contacttype', ContactTypeViewSet, base_name="contacttype")
+router.register(r'segments', SegmentViewSet, base_name="segment")
 
 urlpatterns = [
     url(r'^', include(router.urls)),
