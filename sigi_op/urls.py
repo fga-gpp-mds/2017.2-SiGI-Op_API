@@ -28,10 +28,10 @@ from gbic.views import GBICListViewSet, GBIC_TypeListViewSet
 from emendation_box.views import EmendationBoxListViewSet
 from emendation_box.views import EmendationBoxTypeListViewSet
 from emendation_box.views import EmendationBoxStructureListViewSet
+from post.views import PostListViewSet
 from uplink.views import UplinkViewSet
 from technical_reserve.views import TechnicalReserveListViewSet
 from .views import login, create_auth
-
 
 router = DefaultRouter()
 router.register(r'undergroundboxes', views.UndergroundBoxViewSet)
@@ -53,6 +53,7 @@ router.register(r'emendation_box_structures',
                 EmendationBoxStructureListViewSet, base_name='structure')
 router.register(r'technicalreserves', TechnicalReserveListViewSet,
                 base_name='technical_reserve')
+router.register(r'posts', PostListViewSet, base_name='post')
 router.register(r'sites', SiteListViewSet, base_name="site")
 router.register(r'sitetypes', SiteTypeListViewSet, base_name="sitetype")
 router.register(r'nobreaks', NoBreakViewSet, base_name='nobreak')
