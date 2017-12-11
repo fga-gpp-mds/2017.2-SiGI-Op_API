@@ -31,6 +31,7 @@ from gbic.views import GBICListViewSet, GBICTypeListViewSet
 from emendation_box.views import EmendationBoxListViewSet
 from emendation_box.views import EmendationBoxTypeListViewSet
 from emendation_box.views import EmendationBoxStructureListViewSet
+from emendation_box.views import PostListViewSet
 from uplink.views import UplinkViewSet
 from uplink.views import SegmentsListViewSet
 from cable_stretch.views import CableStretchListViewSet
@@ -39,6 +40,7 @@ from cable_stretch.views import TubelooseListViewSet
 from technical_reserve.views import TechnicalReserveListViewSet
 from .views import login, create_auth, networkmap, update_auth
 from dgo.views import GODFabricantListViewSet, GODFabricantModelListViewSet
+
 
 ROUTER = DefaultRouter()
 ROUTER.register(r'permissions', PermissionViewSet, base_name='permissions')
@@ -63,6 +65,7 @@ ROUTER.register(r'emendation_box_structures',
                 EmendationBoxStructureListViewSet, base_name='structure')
 ROUTER.register(r'technicalreserves', TechnicalReserveListViewSet,
                 base_name='technical_reserve')
+ROUTER.register(r'posts', PostListViewSet, base_name='post')
 ROUTER.register(r'sites', SiteListViewSet, base_name="site")
 ROUTER.register(r'sitetypes', SiteTypeListViewSet, base_name="sitetype")
 ROUTER.register(r'nobreaks', NoBreakViewSet, base_name='nobreak')

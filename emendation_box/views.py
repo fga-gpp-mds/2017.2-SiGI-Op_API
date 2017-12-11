@@ -3,6 +3,8 @@ from .serializers import EmendationBoxSerializer
 from .serializers import EmendationBoxTypeSerializer
 from .serializers import EmendationBoxStructureSerializer
 from .models import EmendationBoxStructure, EmendationBoxType, EmendationBox
+from .serializers import PostSerializer
+from .models import Post
 
 
 # Create your views here.
@@ -25,3 +27,8 @@ class EmendationBoxStructureListViewSet(CustomViewSet):
     order_param_name = 'description'
     queryset = EmendationBoxStructure.objects.all().order_by('description')
     serializer_class = EmendationBoxStructureSerializer
+
+
+class PostListViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
